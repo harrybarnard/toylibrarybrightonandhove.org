@@ -23,7 +23,7 @@ hugo new page/<page name>.md
 ```
 
 ### Development Commands
-Check [gulpfile.js](https://github.com/harrybarnard/ecpuk.org/blob/master/gulpfile.js) for more info.
+Check [gulpfile.js](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/gulpfile.js) for more info.
 
 Install dependencies:
 ```bash
@@ -47,8 +47,9 @@ npm run publish
 ```
 
 ### Configuration
-Hugo is configured using [config.toml](https://github.com/harrybarnard/ecpuk.org/blob/master/config.toml).  
-You'll need to create an aws.json (in the project root) file to configure your Amazon deployment. You can use [aws.example.json](https://github.com/harrybarnard/ecpuk.org/blob/master/aws.example.json)
+Hugo is configured using [config.toml](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/config.toml).  
+You'll need to create an aws.json (in the project root) file to configure your Amazon deployment. You can use
+[aws.example.json](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/aws.example.json)
 as a guide for this.
 
 ## Licence
