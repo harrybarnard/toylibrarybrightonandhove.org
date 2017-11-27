@@ -1,0 +1,85 @@
+// Theme Variables
+// Mainly overrides for default Bootstrap 3 theme.
+
+// Basic Colour Scheme
+@brand-primary: #3a563c;
+@gray-dark: lighten(black, 25%);
+@gray: lighten(black, 50%);
+@white-faded: fade(white, 80%);
+@gray-light: lighten(black, 75%);
+@gray-lighter: lighten(#9bb79d, 26%);
+
+// Main Navigation Menu
+@navbar-height: 50px;
+@navbar-inverse-bg: @brand-primary;
+@navbar-inverse-toggle-hover-bg: @navbar-inverse-link-hover-bg;
+@navbar-inverse-toggle-icon-bar-bg: #fff;
+@navbar-inverse-toggle-border-color: @brand-primary;
+
+// Navigation Menu Logo
+@navbar-logo-path: "/img/logo.png"; // Absolute path to logo image
+@navbar-logo-pad: 68px;
+
+@well-bg: @gray-lighter;
+
+// Sharing Buttons
+@twitter-bg: #55acee;
+@facebook-bg: #3b5998;
+
+// When Navigation Menu becomes collapsed and Container starts to stack
+@grid-float-breakpoint: 991px;
+
+@cover-break-height: 800px;
+@cover-break-width: 440px;
+
+// Page Covers
+@page-cover-height: 100vh;
+@page-cover-min-height: 520px;
+@page-cover-bg: @well-bg;
+
+// Article Covers
+@post-cover-height: 60vh;
+@post-cover-min-height: 480px;
+@post-header-height: 40vh;
+@post-header-min-height: 320px;
+@post-cover-bg: @page-cover-bg;
+
+// Author & Tag Covers
+@tag-cover-height: 55vh;
+@tag-cover-min-height: 440px;
+@tag-header-height: 45vh;
+@tag-header-min-height: 360px;
+@tag-cover-bg: @page-cover-bg;
+
+// Text Contrast - page covers, article headers etc.
+@contrast-text-color: @gray-dark;
+@contrast-text-bg: rgba(242,242,242, 0.6); //@well-bg in RGBA
+//@contrast-text-bg: @well-bg;
+
+@contact-map-min-height: 220px;
+
+// Typography
+@font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-serif: 'Merriweather', 'Times New Roman', serif;
+@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base: @font-family-serif;
+
+@font-size-base: 20px;
+@font-size-large: ceil((@font-size-base * 1.25));
+@font-size-small: ceil((@font-size-base * 0.85));
+@font-size-btn: 14px;
+
+@font-size-h1: floor((@font-size-base * 2.6));
+@font-size-h2: floor((@font-size-base * 2.15));
+@font-size-h3: ceil((@font-size-base * 1.7));
+@font-size-h4: ceil((@font-size-base * 1.25));
+@font-size-h5: @font-size-base;
+@font-size-h6: ceil((@font-size-base * 0.85));
+
+@line-height-base: 1.428571429;
+@line-height-computed: floor((@font-size-base * @line-height-base));
+
+@headings-font-family: @font-family-sans-serif;
+@headings-font-weight: 800;
+@headings-line-height: 1.1;
+@headings-color: inherit;

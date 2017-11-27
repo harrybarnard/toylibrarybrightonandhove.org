@@ -1,0 +1,16 @@
+{
+  "s3": {
+    "region": "<s3-region>",
+    "params": {
+      "Bucket": "<your-bucket-name>"
+    },
+    "accessKeyId": "<your-access-key-id>",
+    "secretAccessKey": "<your-secret-access-key>"
+  },
+  "cf": {
+    "distribution": "<your-cloudfront-distribution-id>",
+    "accessKeyId": "<your-access-key-id>",
+    "secretAccessKey": "<your-secret-access-key>",
+    "indexRootPath": true
+  }
+}

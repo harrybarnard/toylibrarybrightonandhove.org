@@ -1,0 +1,41 @@
+.transition-all() {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.background-cover() {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.serif() {
+  font-family: @font-family-serif;
+}
+
+.sans-serif () {
+  font-family: @font-family-sans-serif;
+}
+
+.contrast-highlight() {
+  display: inline-block;
+  padding: 5px;
+  color: @contrast-text-color;
+  background-color: @contrast-text-bg;
+}
+
+.text-link() {
+  text-decoration: underline;
+  font-weight: bold;
+  &hover, &active {
+    color: @brand-primary;
+  }
+}
+
+.text-shadow() {
+  text-shadow: 2px 2px #222;
+}

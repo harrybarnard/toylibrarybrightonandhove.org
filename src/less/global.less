@@ -1,0 +1,155 @@
+p {
+  //line-height: 1.5;
+  margin: 30px 0;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  font-size: 14px;
+}
+
+a {
+  color: @gray-dark;
+  &:hover,
+  &:focus {
+    color: @brand-primary;
+  }
+}
+
+a img {
+  &:hover,
+  &:focus {
+    cursor: zoom-in;
+  }
+}
+
+blockquote {
+  color: @gray;
+  font-style: italic;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}
+
+.btn {
+  .sans-serif;
+}
+
+a.btn {
+  text-decoration: none !important;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+  &:hover,
+  &:focus {
+    color: @brand-primary;
+    text-decoration: none;
+  }
+}
+
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+footer.page-footer {
+  padding: 5px 0 65px;
+  .list-inline {
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  .sans-serif;
+  margin-bottom: 2px;
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+}
+
+.pager {
+  .sans-serif;
+  font-size: 80%;
+}
+
+.btn-twitter {
+  .button-variant(#FFF; @twitter-bg; @twitter-bg);
+}
+
+.btn-facebook {
+  .button-variant(#FFF; @facebook-bg; @facebook-bg);
+}
+
+.well {
+  border: none;
+}
+
+blockquote {
+  font-size: 20px;
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
+.contact-map {
+  //margin-top: 50px;
+  height: 50vh;
+  min-height: @contact-map-min-height;
+  background-color: @page-cover-bg;
+}
+
+a.thumbnail img:focus, a img:hover {
+  cursor: pointer !important;
+}
+
+.thumbnail h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: absolute;
+  bottom: 4px;
+  left: 20px;
+  right: 20px;
+  .contrast-highlight()
+}
+
+@media (min-width: @grid-float-breakpoint) {
+  .thumbnail h4 {
+    bottom: 33px;
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: @cover-break-width) {
+  h1 {
+    font-size: ceil((@font-size-h1 * 0.6));
+  }
+  h2 {
+    font-size: ceil((@font-size-h2 * 0.7));
+  }
+  h3 {
+    font-size: ceil((@font-size-h3 * 0.7));
+  }
+  h4 {
+    font-size: ceil((@font-size-h4 * 0.8));
+  }
+  p, li, td, th, h5 {
+    font-size: ceil((@font-size-base * 0.8));
+  }
+}

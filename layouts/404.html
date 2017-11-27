@@ -1,0 +1,33 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="page-cover" style="background-image: url('/img/nina-strehl-140728_c.jpg')" id="home">
+    <div class="container home">
+        <div class="wrap">
+            <h1><span>404 Page Not Found</span></h1>
+            <div class="credit"><a href="https://unsplash.com/@ninastrehl">Photo by Nina Strehl</a></div>
+        </div>
+    </div>
+    <a class="btn btn-link btn-cover" href="#header" role="button"><i class="fa fa-angle-down"></i></a>
+</header>
+
+<header class="container cover-header" id="header">
+    <div class="row text-center">
+        <p>The resource you requested cannot be found. It may have been moved or removed.</p>
+        <p class="text-center">
+            <a class="btn btn-lg btn-primary" href="/" role="button">Our Home Page <i
+                    class="fa fa-angle-double-right"></i></a>
+            <a class="btn btn-lg btn-primary" href="/contact/" role="button">Get In Touch <i
+                    class="fa fa-angle-double-right"></i></a>
+        </p>
+    </div>
+</header>
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}
