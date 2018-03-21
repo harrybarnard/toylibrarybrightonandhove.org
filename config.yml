@@ -1,0 +1,32 @@
+baseUrl: "https://toylibrarybrightonandhove.org/"
+languageCode: "en-GB"
+title: "Early Childhood Project Toy Library"
+
+params:
+  description: "We are a Brighton and Hove, UK based toy library that provides a wide selection of carefully chosen resources that reflect family life and diversity and uphold an anti-bias approach to play, care and education for young children, their parents and carers and those working with them."
+  copyright:
+    html: "&copy; Copyright 2007-2018 <a href=\"https://ecpuk.org\">Brighton, Hove & District Early Childhood Project</a><br/>Registered as a charity in England & Wales, Number 1068309"
+  facebook:
+    page: "toylibrarybrightonandhove"
+    adminId: "1813667072187603"
+  contact:
+    address:
+      string: "Early Childhood Project, Tarner Children's Centre, Ivory Place, Brighton, BN2 9QE, UNITED KINGDOM"
+      html: "<strong>Early Childhood Project</strong><br>Tarner Children's Centre<br>Ivory Place<br>Brighton, BN2 9QE<br>UNITED KINGDOM"
+    phone:
+      string: "01273294105"
+      html: "01273 294105"
+    email:
+      string: "info@ecpuk.org"
+      html: "info@ecpuk.org"
+    map:
+      coords: [50.8256, -0.1340]
+      zoom: 14
+      minZoom: 5
+      token: "pk.eyJ1IjoiZWNwdWsiLCJhIjoiY2l6bDc5MGRjMDAwYjMycHBna3RndTRyYyJ9.F1-tSNFE1c4GD6BlZYGbaQ"
+      icon: "/img/mapMarker.png"
+      iconSize: [24, 30]
+      iconAnchor: [12, 30]
+  about:
+    title: "Who We Are"
+    message: "The Early Childhood Project believe that all children have the right to develop in a positive environment free from prejudice and discrimination. We are a registered charity who work positively to combat bias of every kind in co-operation with others across Brighton and Hove. We provide information, resources and support to all those people involved in young children’s play, care and education."

@@ -1,3 +1,4 @@
+// Setup covers
 .page-cover, .post-cover, .tag-cover {
   position: relative;
   background-color: @page-cover-bg;
@@ -8,18 +9,17 @@
   .background-cover;
   padding: 0 !important;
   h1 {
-    font-size: 48px;
+    font-size: @font-size-cover-heading;
   }
   h1, p {
-    span {
-      //.contrast-highlight();
-      color: white;
-      .text-shadow()
-    }
+    color: @cover-text-color;
+    .text-shadow()
   }
+  // Cover content container
   .container {
-    height: 480px;
-    min-height: 480px;
+    height: @cover-container-height;
+    min-height: @cover-container-height;
+    // Element that wraps cover text
     .wrap {
       display: table-cell;
       vertical-align: middle;
@@ -28,16 +28,18 @@
       min-height: @page-cover-min-height;
       width: 100vw;
       padding-bottom: 40px;
+      // Cover background image credit
       .credit {
         position: absolute;
         bottom: 0;
         right: 0;
-        font-size: 10px;
+        font-size: @font-size-xsmall;
+        .sans-serif();
         .contrast-highlight();
       }
     }
   }
-
+  // Home page cover overrides
   .container.home, .post-cover {
     width: 100%;
     .wrap {
@@ -45,20 +47,20 @@
       text-align: center;
     }
   }
+  // Cover font sizes for narrow screens
   @media (max-width: @cover-break-width) {
     h1 {
       font-size: ceil((@font-size-h1 * 0.6));
     }
+
     p {
       font-size: ceil((@font-size-base * 0.8));;
     }
   }
+  // Add some space to the sides of cover text on wide screens
   @media (min-width: @grid-float-breakpoint) {
     .container.home {
       .wrap {
-        //vertical-align: top;
-        //text-align: right;
-        //padding-top: 40px;
         h1, p {
           margin-left: 20%;
           margin-right: 20%
@@ -66,20 +68,13 @@
       }
     }
   }
+  // Set text container height on tall screens
   @media (min-height: @page-cover-min-height) {
     .container {
       height: @page-cover-height;
       .wrap {
         height: @page-cover-height;
       }
-    }
-  }
-  .list-inline {
-    margin-left: 0;
-    .sans-serif;
-    font-size: 80%;
-    li {
-      background: @contrast-text-bg;
     }
   }
 }
@@ -92,21 +87,14 @@
   height: @post-cover-min-height;
 }
 
+// Hide down arrow link for short pages
 .post-cover + .cover-header {
-  //height: @post-header-min-height;
   .btn-cover {
     display: none;
   }
 }
 
-.tag-cover {
-  height: @tag-cover-min-height;
-}
-
-.tag-cover + .cover-header {
-  height: @tag-header-min-height;
-}
-
+// Set heights of covers on tall pages
 @media (min-height: @cover-break-height) {
   .page-cover {
     height: @page-cover-height;
@@ -132,37 +120,34 @@
   }
 }
 
+// Add some padding to the home page section
 main, .home-section {
   padding-top: @navbar-height;
-}
-
-.home-links {
-  h2 {
-    margin-top: 5px;
-  }
 }
 
 .home-services {
   margin-top: 20px;
 }
 
+// Page header
 .page-header {
   border-bottom: none;
-  margin-bottom: 0 !important;
 
   hr {
     margin-bottom: 0 !important;
   }
 
+  // Remove top padding from main immediately after page header
   + .main {
     padding-top: 0 !important;
   }
 }
 
+// Down arrow link
 .page-cover, .post-cover, .cover-header {
   .btn-cover {
     left: 50%;
-    color: #FFF;
+    color: @cover-text-color;
     font-size: 96px;
     position: absolute;
     bottom: -40px;
@@ -170,23 +155,17 @@ main, .home-section {
   }
 }
 
+// Down arrow link *in* covers
 .page-cover, .post-cover {
   .btn-cover {
-    color: #FFF;
+    color: @cover-text-color;
     .text-shadow()
   }
 }
 
+// Override for down arrow link under headings *outside* covers
 .cover-header {
   .btn-cover {
-    color: #333;
-  }
-  .author-image {
-    position: relative;
-    margin-top: -64px;
+    color: @gray-dark;
   }
 }
-
-//.container.main {
-//  padding-top: 50px;
-//}

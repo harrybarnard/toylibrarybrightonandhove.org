@@ -1,0 +1,22 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="container page-header" id="header">
+    <div class="row text-center">
+        <div class="col-md-12 post-content">
+            <h1 class="post-title">{{ .Title }}</h1>
+        </div>
+    </div>
+    <hr>
+</header>
+
+{{ partial "page.html" . }}
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}

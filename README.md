@@ -1,8 +1,8 @@
 # Early Childhood Project Toy Library Website
 
-This is the source code for the [Early Childhood Project Toy Library](https://toylibrarybrightonandhove.org) Website a Brighton, UK based children's charity.
-It is a companion site to the main [Early Childhood Project](https://ecpuk.org) Website and is designed to be used by users
-of the toy library.
+This is the source code for the [Early Childhood Project Toy Library](https://toylibrarybrightonandhove.org) Website a 
+Brighton, UK based children's charity. It is a companion site to the main [Early Childhood Project](https://ecpuk.org) 
+Website and is designed to be used by users of the toy library.
 
 Prerequisites:
 
@@ -13,7 +13,8 @@ Prerequisites:
 
 ## Usage
 
-This is a [Hugo](https://gohugo.io/) project. Check the [Hugo Documentation](https://gohugo.io/documentation/) for more usage information.
+This is a [Hugo](https://gohugo.io/) project. Check the [Hugo Documentation](https://gohugo.io/documentation/) for more 
+usage information.
 
 ### Content Commands
 
@@ -47,7 +48,7 @@ npm run publish
 ```
 
 ### Configuration
-Hugo is configured using [config.toml](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/config.toml).  
+Hugo is configured using [config.yml](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/config.yml).  
 You'll need to create an aws.json (in the project root) file to configure your Amazon deployment. You can use
 [aws.example.json](https://github.com/harrybarnard/toylibrarybrightonandhove.org/blob/master/aws.example.json)
 as a guide for this.
@@ -55,5 +56,5 @@ as a guide for this.
 ## Licence
 MIT
 
-*Whilst the code is licenced under the MIT licence in the hope it helps others whishing to implement Hugo on Amazon S3/Cloudfront
+*Whilst the code is licenced under the MIT licence in the hope it helps others wishing to implement Hugo on Amazon S3/Cloudfront
 the site content remains the copyright of the Brighton, Hove & District Early Childhood Project.*

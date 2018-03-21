@@ -1,3 +1,5 @@
+//* PAGE ELEMENTS *//
+
 p {
   //line-height: 1.5;
   margin: 30px 0;
@@ -6,9 +8,38 @@ p {
   }
 }
 
-.btn {
-  font-size: 14px;
+blockquote {
+  color: @gray;
+  font-style: italic;
 }
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}
+
+.pager {
+  .sans-serif;
+  font-size: 80%;
+  li a {
+    text-decoration: none;
+  }
+}
+
+//* BUTTONS *//
+
+.btn {
+  font-size: @font-size-btn;
+  .sans-serif;
+}
+
+.btn-lg {
+  margin-bottom: 3px;
+}
+
+//* LINKS *//
 
 a {
   color: @gray-dark;
@@ -25,26 +56,11 @@ a img {
   }
 }
 
-blockquote {
-  color: @gray;
-  font-style: italic;
-}
-
-hr.small {
-  max-width: 100px;
-  margin: 15px auto;
-  border-width: 4px;
-  border-color: white;
-}
-
-.btn {
-  .sans-serif;
-}
-
 a.btn {
   text-decoration: none !important;
 }
 
+// Heading links
 h1 a, h2 a, h3 a, h4 a {
   &:hover,
   &:focus {
@@ -53,10 +69,7 @@ h1 a, h2 a, h3 a, h4 a {
   }
 }
 
-.vertical {
-  display: table-cell;
-  vertical-align: middle;
-}
+//* FOOTER *//
 
 footer.page-footer {
   padding: 5px 0 65px;
@@ -71,50 +84,43 @@ footer.page-footer {
   }
 }
 
-.label {
-  .sans-serif;
-  margin-bottom: 2px;
-  a {
-    color: #FFF;
-    text-decoration: none;
-  }
-}
+//* SHARING BUTTONS *//
 
-.pager {
-  .sans-serif;
-  font-size: 80%;
-}
-
+// Twitter button
 .btn-twitter {
   .button-variant(#FFF; @twitter-bg; @twitter-bg);
 }
 
+// Facebook button
 .btn-facebook {
   .button-variant(#FFF; @facebook-bg; @facebook-bg);
 }
 
-.well {
-  border: none;
-}
+//* CONTACT PAGE *//
 
-blockquote {
-  font-size: 20px;
-  *:first-child {
-    margin-top: 0;
-  }
-}
-
+// Contact page map
 .contact-map {
-  //margin-top: 50px;
   height: 50vh;
   min-height: @contact-map-min-height;
   background-color: @page-cover-bg;
 }
 
+// Contact details icons
+.media.address {
+  .media-left {
+    text-align: center;
+    min-width: 28px;
+  }
+}
+
+//* THUMBNAILS *//
+
+// Force a link pointer on thumbnail image links
 a.thumbnail img:focus, a img:hover {
   cursor: pointer !important;
 }
 
+// Image thumbnail headings
 .thumbnail h4 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -125,31 +131,80 @@ a.thumbnail img:focus, a img:hover {
   .contrast-highlight()
 }
 
+// Heading override for wider screens
 @media (min-width: @grid-float-breakpoint) {
   .thumbnail h4 {
     bottom: 33px;
   }
 }
 
-.row {
-  margin-left: 0;
-  margin-right: 0;
+//* HACKS AND OVERRIDES *//
+
+// Vertical alignment hack
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
 }
 
+.label, .badge {
+  .sans-serif;
+  font-weight: 400;
+}
+
+// Label override
+.label {
+  margin-bottom: 2px;
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+}
+
+// Override row
+//.row {
+//  margin-left: 0;
+//  margin-right: 0;
+//}
+
+.well {
+  border: none;
+}
+
+a.icon-link {
+  text-decoration: none;
+}
+
+blockquote {
+  font-size: 20px;
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
+// Set font sizes for really narrow screens
 @media (max-width: @cover-break-width) {
   h1 {
     font-size: ceil((@font-size-h1 * 0.6));
   }
+
   h2 {
     font-size: ceil((@font-size-h2 * 0.7));
   }
+
   h3 {
     font-size: ceil((@font-size-h3 * 0.7));
   }
+
   h4 {
     font-size: ceil((@font-size-h4 * 0.8));
   }
+
   p, li, td, th, h5 {
     font-size: ceil((@font-size-base * 0.8));
   }
+
+  .btn {
+    font-size: ceil((@font-size-btn * 0.8));
+  }
+
 }

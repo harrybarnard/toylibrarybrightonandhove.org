@@ -2,15 +2,28 @@
 <html lang="{{.Site.LanguageCode}}">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    {{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
-    {{ else }}
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    {{ end }}
+    {{ if .IsHome }}<title>{{ .Site.Title }}</title>{{ else }}<title>{{ .Title }} - {{ .Site.Title }}</title>{{ end }}
+    {{ with .Description }}<meta name="description" content="{{ . }}" />{{ end }}
 
     <link rel="canonical" href="{{ .Permalink }}">
+
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:locale" content="{{.Site.LanguageCode}}" />
+    {{ with .Site.Params.Facebook.Page }}
+    <meta property="article:author" content="https://www.facebook.com/{{ . }}" />
+    <meta property="article:publisher" content="https://www.facebook.com/{{ . }}" />
+    {{ end }}
+    {{ if .IsPage }}<meta property="article:section" content="{{ .Section }}" />
+    {{ with .Params.topics }}{{ range first 6 . }}
+    <meta property="article:tag" content="{{ . }}" />{{ end }}{{ end }}
+    {{ end }}
+    {{ with .Site.Params.Facebook.AdminId }}<meta property="fb:admins" content="{{ . }}" />{{ end }}

@@ -63,6 +63,7 @@
             .pipe(publisher.publish(headers))
             .pipe(cloudfront(aws.cf))
             .pipe(publisher.cache())
+            .pipe(publisher.sync())
             .pipe(awspublish.reporter());
     });
 

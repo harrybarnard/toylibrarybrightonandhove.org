@@ -8,13 +8,18 @@
 @white-faded: fade(white, 80%);
 @gray-light: lighten(black, 75%);
 @gray-lighter: lighten(#9bb79d, 26%);
+@gray: lighten(black, 50%);
+@white-faded: fade(white, 80%);
+@gray-light: lighten(black, 75%);
+@gray-lighter: lighten(@brand-primary, 66%);
+@shadow-color: #222;
 
 // Main Navigation Menu
 @navbar-height: 50px;
 @navbar-inverse-bg: @brand-primary;
 @navbar-inverse-toggle-hover-bg: @navbar-inverse-link-hover-bg;
 @navbar-inverse-toggle-icon-bar-bg: #fff;
-@navbar-inverse-toggle-border-color: @brand-primary;
+@navbar-inverse-toggle-border-color: @navbar-inverse-bg;
 
 // Navigation Menu Logo
 @navbar-logo-path: "/img/logo.png"; // Absolute path to logo image
@@ -31,6 +36,9 @@
 
 @cover-break-height: 800px;
 @cover-break-width: 440px;
+@cover-container-height: 480px;
+
+@cover-text-color: white;
 
 // Page Covers
 @page-cover-height: 100vh;
@@ -67,7 +75,8 @@
 @font-size-base: 20px;
 @font-size-large: ceil((@font-size-base * 1.25));
 @font-size-small: ceil((@font-size-base * 0.85));
-@font-size-btn: 14px;
+@font-size-xsmall: ceil((@font-size-base * 0.5));
+@font-size-btn: 18px;
 
 @font-size-h1: floor((@font-size-base * 2.6));
 @font-size-h2: floor((@font-size-base * 2.15));
@@ -75,6 +84,8 @@
 @font-size-h4: ceil((@font-size-base * 1.25));
 @font-size-h5: @font-size-base;
 @font-size-h6: ceil((@font-size-base * 0.85));
+
+@font-size-cover-heading: 48px;
 
 @line-height-base: 1.428571429;
 @line-height-computed: floor((@font-size-base * @line-height-base));

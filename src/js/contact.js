@@ -1,5 +1,5 @@
 /**
- * toylibrarybrightonandhove.org - Contact Page JavaScript
+ * ecpuk.org - Contact Page JavaScript
  * ============================================================ */
 (function () {
     "use strict";
@@ -7,6 +7,7 @@
     var map = L.map('map', {
         center: mapOptions.coords,
         zoom: mapOptions.zoom,
+        minZoom: mapOptions.minZoom,
         trackResize: true,
         dragging: false,
         zoomControl: false,

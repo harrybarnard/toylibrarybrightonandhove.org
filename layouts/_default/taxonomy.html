@@ -1,0 +1,44 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="container page-header" id="header">
+    <div class="row text-center">
+        <div class="col-md-12 post-content">
+            <h1 class="post-title">{{ .Data.Singular | humanize }}: <code>{{ .Title | lower }}</code></h1>
+        </div>
+    </div>
+    <hr>
+</header>
+
+<section class="container main" role="main" id="main">
+    <div class="row" id="content">
+
+        <aside id="sidebar" class="col-md-3 col-md-push-9 post-sidebar">
+
+            {{ partial "post_share.html" }}
+
+        </aside>
+
+        <article class="col-md-9 col-md-pull-3">
+
+            <section class="post-content">
+                <ul class="list-unstyled media-list">
+                    {{ range .Data.Pages.ByLastmod }}
+                    {{ .Render "li" }}
+                    {{ end}}
+                </ul>
+            </section>
+
+        </article>
+
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}

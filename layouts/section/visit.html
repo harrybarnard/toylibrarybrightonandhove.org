@@ -1,0 +1,55 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="container page-header" id="header">
+    <div class="row text-center">
+        <div class="col-md-12 post-content">
+            <h1 class="post-title">{{ .Title }}</h1>
+            <hr>
+        </div>
+    </div>
+</header>
+<section class="container main" role="main" id="main">
+    <div class="row home-services" id="content">
+    {{ with .Site.GetPage "page" "visit/getting-here.md" }}
+        <div class="col-md-4 text-center">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2>{{ .Title }}</h2>
+            </a>
+        </div>
+    {{ end }}{{ with .Site.GetPage "page" "visit/your-visit.md" }}
+        <div class="col-md-4 text-center">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-users fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2>{{ .Title }}</h2>
+            </a>
+        </div>
+    {{ end }}{{ with .Site.GetPage "page" "visit/using-the-library.md" }}
+        <div class="col-md-4 text-center">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-list fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2>{{ .Title }}</h2>
+            </a>
+        </div>
+    {{ end }}
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}

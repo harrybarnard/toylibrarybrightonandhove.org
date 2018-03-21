@@ -1,0 +1,48 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="container page-header" id="header">
+    <div class="row text-center">
+        <div class="col-md-12 post-content">
+            <h1 class="post-title">{{.Site.Params.ResourcesTitle}}</h1>
+            <hr>
+            <p class="col-md-12">{{ .Content }}</p>
+        </div>
+    </div>
+
+</header>
+
+
+<section class="container main" role="main" id="main">
+    <div class="row home-services" id="content">
+        {{ range where .Data.Pages.ByWeight "Section" "resources" }}
+        {{ .Render "li-image" }}
+        {{ end }}
+    </div>
+    <hr>
+</section>
+
+<section class="container post-content">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4>Topics</h4>
+            <ul class="list-inline">
+                {{ range $key, $taxonomy := .Site.Taxonomies.topics }}
+                <li>
+                    <code><a href="/topics/{{ $key | urlize }}/">{{ $key | lower }}</a></code>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}

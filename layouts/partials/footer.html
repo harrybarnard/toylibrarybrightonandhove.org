@@ -3,7 +3,30 @@
         <hr>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p class="copyright">{{.Site.Params.CopyrightHTML | safeHTML}}<br>
+                <ul class="list-inline text-center">
+                    {{if .Site.Params.Facebook.Page }}
+                    <li>
+                        <a href="https://www.facebook.com/{{.Site.Params.Facebook.Page }}/" title="Find us on Facebook"
+                           role="button">
+                            <span class="fa-stack fa-lg" aria-hidden="true">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <span class="sr-only">Find us on Facebook</span>
+                        </a>
+                    </li>
+                    {{end}}
+                    <li>
+                        <a href="/contact/" title="Get in Touch" role="button">
+                            <span class="fa-stack fa-lg" aria-hidden="true">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <span class="sr-only">Contact Us</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright">{{.Site.Params.Copyright.HTML | safeHTML}}<br>
                     <a href="https://ecpuk.org/policy/safeguarding/">Safeguarding Children and Vulnerable Adults Policy</a></p>
             </div>
         </div>

@@ -1,0 +1,50 @@
+{{ partial "meta.html" . }}
+
+{{ partial "head_includes.html" . }}
+
+{{ partial "menu.html" . }}
+
+<header class="post-cover" style="background-image: url('{{ .Params.Cover.Image }}')">
+    <div class="container">
+        <div class="wrap">
+            <div class="credit"><a href="{{ .Params.Cover.URL }}">Photo by {{ .Params.Cover.Credit }}</a></div>
+        </div>
+    </div>
+</header>
+<header class="container cover-header" id="header">
+    <div class="row text-center post-content">
+        <h1 class="col-md-12 post-title">{{ .Title }}</h1>
+    {{ if .Description }}
+        <p>{{ .Description }}</p>
+    {{ end }}
+    </div>
+    <a class="btn btn-link btn-cover" href="#main" role="button" title="Scroll Down">
+        <i class="fas fa-angle-down" aria-hidden="true"></i><span class="sr-only">Scroll Down</span>
+    </a>
+</header>
+
+{{ partial "page.html" . }}
+
+{{ if .Params.topics }}
+<section class="container post-content">
+    <hr>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4>Related Topics</h4>
+            <ul class="list-inline">
+            {{ range .Params.topics }}
+                <li>
+                    <code><a href="{{ "/topics/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a></code>
+                </li>
+            {{ end }}
+            </ul>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ partial "footer.html" . }}
+
+{{ partial "foot_includes.html" . }}
+
+{{ partial "foot.html" . }}

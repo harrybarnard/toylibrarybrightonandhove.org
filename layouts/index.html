@@ -4,63 +4,78 @@
 
 {{ partial "menu.html" . }}
 
-<header class="page-cover" style="background-image: url('{{.Site.Params.CoverImage}}')" id="home">
+<header class="page-cover" style="background-image: url('{{ .Params.Cover.Image }}')" id="home">
     <div class="container home">
         <div class="wrap">
-            <h1><span>{{.Site.Params.CoverTitle}}</span></h1>
-
-            <p><span>{{.Site.Params.CoverMessage}}</span></p>
-
-            <div class="credit"><a href="{{.Site.Params.CoverCreditLink}}">Photo by {{.Site.Params.CoverCredit}}</a>
+            <h1>{{ .Title }}</h1>
+        {{ .Content }}
+            <div class="credit">
+                <a href="{{ .Params.Cover.URL }}">Photo by {{ .Params.Cover.Credit }}</a>
             </div>
         </div>
     </div>
-    <a class="btn btn-link btn-cover" href="#about" role="button"><i class="fa fa-angle-down"></i></a>
+    <a class="btn btn-link btn-cover" href="#about" role="button" title="Scroll Down">
+        <i class="fas fa-angle-down" aria-hidden="true"></i><span class="sr-only">Scroll Down</span>
+    </a>
 </header>
 
 <section class="container home-section" id="about">
+<div class="row home-links">
+{{ with .Site.GetPage "section" "visit" }}
+    <div class="col-md-4 col-md-offset-2 text-center">
+        <a href="{{ .Permalink }}" title="{{ .Title }}" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-info fa-stack-1x fa-inverse"></i>
+                </span>
+            <h2>{{ .Title }}</h2>
+        </a>
+    </div>
+{{ end }}{{ with .Site.GetPage "section" "faq" }}
+    <div class="col-md-4 text-center">
+        <a href="{{ .Permalink }}" title="{{ .Title }}" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-question fa-stack-1x fa-inverse"></i>
+                </span>
+            <h2>{{ .Title }}</h2>
+        </a>
+    </div>
+{{ end }}
     <div class="row home-links">
-        <div class="col-md-4 text-center">
-            <a href="https://www.facebook.com/{{.Site.Params.FacebookPage}}/" title="Find us on Facebook">
-                <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        <div class="col-md-4 col-md-offset-2 text-center">
+            <a href="https://www.facebook.com/{{.Site.Params.Facebook.Page}}/" title="Find us on Facebook"
+               class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
                 </span>
+                <h2>Find us on Facebook</h2>
             </a>
-            <h2><a href="https://www.facebook.com/{{.Site.Params.FacebookPage}}/">Find us on Facebook</a></h2>
         </div>
         <div class="col-md-4 text-center">
-            <a href="/faq/" title="Frequently Asked Questions">
-                <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+            <a href="/contact/" title="Get in Touch" class="icon-link">
+                <span class="fa-stack fa-5x" aria-hidden="true">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                 </span>
+                <h2>Get in Touch</h2>
             </a>
-
-            <h2><a href="/faq/">Frequently Asked Questions</a></h2>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="/contact/" title="Get in Touch">
-                <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-            <h2><a href="/contact/">Get in Touch</a></h2>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2>{{.Site.Params.AboutTitle}}</h2>
+            <h2>{{.Site.Params.About.Title}}</h2>
 
-            <p>{{.Site.Params.AboutMessage}}</p>
+            <p>{{.Site.Params.About.Message}}</p>
 
             <p>
                 <a class="btn btn-lg btn-primary" href="https://ecpuk.org" role="button">ECP Website <i
-                        class="fa fa-angle-double-right"></i></a>
-                <a class="btn btn-lg btn-primary" href="https://ecpuk.org/toy-library/" role="button">About This Project <i
-                        class="fa fa-angle-double-right"></i></a>
+                        class="fas fa-angle-double-right"></i></a>
+                <a class="btn btn-lg btn-primary" href="https://ecpuk.org/toy-library/" role="button">About This Project
+                    <i
+                            class="fas fa-angle-double-right"></i></a>
             </p>
         </div>
     </div>

@@ -18,8 +18,9 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/faq/">FAQ</a></li>
-                        <li><a href="/contact/">Contact</a></li>
+                        {{ with .Site.GetPage "section" "visit" }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+                        {{ with .Site.GetPage "section" "faq" }}<li><a href="{{ .Permalink }}">FAQ</a></li>{{ end }}
+                        {{ with .Site.GetPage "section" "contact" }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
                     </ul>
                 </div>
             </div>
