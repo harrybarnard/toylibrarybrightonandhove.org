@@ -7,9 +7,7 @@ description: "A list of commonly asked questions about the Early Childhood Proje
 ---
 
 ## When is the toy library open?
-Tuesday and Friday 9.30 to 12.30 and Wednesday 9.30 to 2.30.  
-During school holidays, Tuesday 9.30 to 12.30.  
-We can also open for individual appointments, [contact us](/contact/) if you're interested.
+Please [contact us](/contact/) for the current opening hours. 
 
 ## Who can use the toy library?
 Anyone from across the city can join the toy library and borrow toys to take home. 
@@ -27,7 +25,7 @@ We have books for adults too; academic books for students, how-to-books for pare
 advice to naming baby books.
 
 ## How much does it cost?
-There is more information about joining the toy library [here](/using-the-library/#joining-the-toy-library).  
+Since the pandemic, the toy library service is free.
 
 ## How long can we borrow stuff for?
 Up to two months.
@@ -64,9 +62,6 @@ It usually works out to a carrier bag's worth, but it depends how big the toys a
 ## Are there any restrictions on what I can borrow?
 Some children are keen to take all the dolls or trains or dinosaurs home in one go, but we gently encourage them to 
 leave some for everyone else to borrow.  
-We have a selection of [WOW](https://www.wowtoys.com/) vehicles that we especially fund raised for. They are frequently 
-used in the play sessions we run and cannot be borrowed. But they can be played with in the toy library and are very 
-popular.
 
 ## Who owns the toy library?
 The [Early Childhood Project](https://ecpuk.org/) is a registered charity; it is run and managed by it's Executive 

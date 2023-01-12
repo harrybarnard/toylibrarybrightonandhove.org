@@ -1,5 +1,5 @@
 /**
- * toylibrarybrightonandhove.org - Gulp Config
+ * ecpuk -
  * ============================================================ */
 (function () {
     "use strict";
@@ -17,7 +17,7 @@
         cloudfront = require('gulp-cloudfront-invalidate-aws-publish'),
         cleancss = require('gulp-clean-css');
 
-    gulp.task('build-js', function () {
+    gulp.task('build-js', gulp.series(function (done) {
         var files = ['src/js/*.js'];
         gulp.src(files)
             .pipe(expect(files))
@@ -25,9 +25,11 @@
             .pipe(uglify())
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('static/js'));
-    });
 
-    gulp.task('build-less', function () {
+        done();
+    }));
+
+    gulp.task('build-less', gulp.series(function (done) {
         gulp.src('src/less/index.less')
             .pipe(less())
             .pipe(sourcemaps.init())
@@ -35,21 +37,33 @@
             .pipe(cleancss())
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('static/css'));
-    });
+
+        done();
+    }));
 
     gulp.task('build-hugo', function(cb) {
         run('hugo').exec(cb);
     });
 
-    gulp.task('watch-js', ['build-js'], function () {
-        gulp.watch('src/js/*.js', ['build-js']);
-    });
+    gulp.task('watch-js', gulp.series('build-js', function (done) {
+        gulp.watch('src/js/*.js', gulp.series('build-js'));
 
-    gulp.task('watch-less', ['build-less'], function () {
-        gulp.watch('src/less/**/*.less', ['build-less']);
-    });
+        done();
+    }));
 
-    gulp.task('publish', ['build'], function () {
+    gulp.task('watch-less', gulp.series('build-less', function (done) {
+        gulp.watch('src/less/**/*.less', gulp.series('build-less'));
+
+        done();
+    }));
+
+    gulp.task('watch', gulp.parallel('watch-less', 'watch-js'));
+
+    gulp.task('build', gulp.series(gulp.parallel('build-less', 'build-js'), 'build-hugo', function(done) {
+        done();
+    }));
+
+    gulp.task('publish', gulp.series('build', function (done) {
 
         var aws = require('./aws.json'),
             publisher = awspublish.create(aws.s3);
@@ -58,19 +72,17 @@
             'Cache-Control': 'max-age=315360000, no-transform, public'
         };
 
-        return gulp.src('./public/**')
+        gulp.src('./public/**')
             .pipe(awspublish.gzip())
             .pipe(publisher.publish(headers))
             .pipe(cloudfront(aws.cf))
             .pipe(publisher.cache())
             .pipe(publisher.sync())
             .pipe(awspublish.reporter());
-    });
 
-    gulp.task('watch', ['watch-less', 'watch-js']);
+        done();
+    }));
 
-    gulp.task('build', ['build-less', 'build-js', 'build-hugo']);
-
-    gulp.task('default', ['build']);
+    gulp.task('default', gulp.series('build'));
 
 })();

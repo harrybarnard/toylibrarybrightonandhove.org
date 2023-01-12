@@ -17,13 +17,7 @@ Families often visit and play in the toy library without joining or between swap
 
 There's a simple membership form to complete; we can assist if needed and we don't ask for I.D. or proof of address.
 
-The membership fee is paid in cash and a receipt is given. This is renewed each year. The current fees are:
-
-£2 per year for an unwaged family or individual.  
-£5 per year for a waged family or individual.  
-£2 per year for a student or childminder.  
-£10 per year for a community group.  
-£20 per year for a commercial or statutory group.
+Since the pandemic, the toy library service is free.
 
 ## Borrowing Resources
 

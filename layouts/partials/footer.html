@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
-                    {{if .Site.Params.Facebook.Page }}
+                {{if .Site.Params.Facebook.Page }}
                     <li>
                         <a href="https://www.facebook.com/{{.Site.Params.Facebook.Page }}/" title="Find us on Facebook"
                            role="button">
@@ -15,7 +15,19 @@
                             <span class="sr-only">Find us on Facebook</span>
                         </a>
                     </li>
-                    {{end}}
+                {{end}}
+                {{if .Site.Params.Youtube.Channel }}
+                    <li>
+                        <a href="https://www.youtube.com/channel/{{.Site.Params.Youtube.Channel}}/" title="Find us on YouTube"
+                           role="button">
+                                <span class="fa-stack fa-lg" aria-hidden="true">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <span class="sr-only">Find us on YouTube</span>
+                        </a>
+                    </li>
+                {{end}}
                     <li>
                         <a href="/contact/" title="Get in Touch" role="button">
                             <span class="fa-stack fa-lg" aria-hidden="true">

@@ -34,7 +34,9 @@
                         <i class="fas fa-phone fa-fw" aria-hidden="true"></i>
                         <span class="sr-only">Phone Number</span>
                     </div>
-                    <div class="media-body">{{ .Site.Params.Contact.Phone.HTML }}</div>
+                    <div class="media-body">
+                        <a href="tel:{{ .Site.Params.Contact.Phone.HTML }}"
+                            title="Phone Us">{{ .Site.Params.Contact.Phone.string }}</a></div>
                 </li>
             {{ end }}
             {{ if .Site.Params.Contact.Email.HTML }}
@@ -45,7 +47,7 @@
                     </div>
                     <div class="media-body">
                         <a href="mailto:{{ .Site.Params.Contact.Email.HTML }}"
-                           title="Email Us">{{ .Site.Params.Contact.Email.HTML }}</a>
+                           title="Email Us">{{ .Site.Params.Contact.Email.string }}</a>
                     </div>
                 </li>
             {{end}}
@@ -58,6 +60,19 @@
                     <div class="media-body">
                         <a href="https://www.facebook.com/{{ .Site.Params.Facebook.Page }}/"
                            title="Find us on Facebook">@{{ .Site.Params.Facebook.Page }}
+                        </a>
+                    </div>
+                </li>
+            {{ end }}
+            {{ if .Site.Params.Youtube.Channel }}
+                <li class="media address">
+                    <div class="media-left">
+                        <i class="fab fa-youtube fa-fw" aria-hidden="true"></i>
+                        <span class="sr-only">YouTube Channel</span>
+                    </div>
+                    <div class="media-body">
+                        <a href="https://www.youtube.com/channel/{{.Site.Params.Youtube.Channel}}/"
+                           title="Find us on YouTube">{{.Site.Params.Youtube.Name}}
                         </a>
                     </div>
                 </li>
@@ -84,13 +99,12 @@
         coords: {{.Site.Params.Contact.Map.Coords}},
         zoom: {{.Site.Params.Contact.Map.Zoom}},
         minZoom: {{.Site.Params.Contact.Map.MinZoom}},
-        token: {{.Site.Params.Contact.Map.Token}},
         icon: {{.Site.Params.Contact.Map.Icon}},
         iconSize: {{.Site.Params.Contact.Map.IconSize}},
         iconAnchor: {{.Site.Params.Contact.Map.IconAnchor}}
     }
 </script>
-<script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-<script src="/js/contact.js"></script>
+<script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js" type="text/javascript"></script>
+<script src="/js/contact.js" type="text/javascript"></script>
 
 {{ partial "foot.html" . }}

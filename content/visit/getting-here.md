@@ -41,12 +41,6 @@ space in the toy library for one sleeping infant in their pram or buggy.
 
 The accessible toilet, child toilet and baby changing facilities are all in the same corridor as the toy library.
 
-### Community Cafe
-
-The community cafe is downstairs via reception and children are welcome and catered for. Contact the [children's centre
-reception](https://www.brighton-hove.gov.uk/content/children-and-education/childrens-services/tarner-childrens-centre)
-for daily opening times.
-
 <nav>
   <ul class="pager">
     <li class="next"><a href="/your-visit/">Your Visit <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
